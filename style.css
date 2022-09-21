@@ -1,0 +1,514 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "cards form";
+}
+.dinamic-card{
+    display: flex;
+    /* position: fixed; */
+    grid-area: cards;
+}
+.cards{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/bg-main-desktop.png);
+    background-size: cover;
+    background-position: 50%;
+}
+.back-card{
+    position: relative;
+    width: 450px;
+    height: 245px;
+    background-image: url(images/bg-card-back.png);
+    background-size: cover;
+    background-position: 50%;
+    margin-left: 260px;
+    margin-top: 350px;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+}
+
+.front-card{
+    position: absolute;
+    width: 450px;
+    height: 245px;
+    background-image: url(images/bg-card-front.png);
+    background-size: cover;
+    background-position: 50%;
+    margin-left: -90px;
+    margin-top: -285px;
+    border-radius: 10px;
+    
+}
+.cardlogo{
+    width: 80px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left !important;
+}
+.back-card>p{
+    transform: translateY(110px);
+    text-align: right;
+    margin-right: 50px;
+    font-size: 15px;
+    font-weight:lighter;
+    letter-spacing: 2px;
+}
+
+.p1-front{
+    margin-top: 65px;
+    height: 25px;
+    text-align: center;
+    letter-spacing:5px;
+    font-weight: 600;
+    font-size: 25px;
+}
+.p-food-card{
+    width: 375px;
+    height: 15px;
+    margin-left: 35px;
+    transform: translateY(10px);
+    display: flex;
+    font-size: 15px;
+    /* justify-content: space-between; */
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.p-month{
+    width: 25PX;
+    margin-left: 160px;
+    text-align: right;
+}
+.P-year{
+    width: 25px;
+    text-align: right;
+}
+.p2-front{
+    width: 160px;
+    /* height: 20px; */
+}
+.form{
+    grid-area: form;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    height: 440px;
+    margin-left: 350px;
+    transform: translateY(200px);
+}
+
+label{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: 2px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+.card-name, .card-number{
+    height: 44px;
+    width: 320px;
+    margin-left: 28px;
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+    text-align: start;
+    font-size: 20px;
+}
+
+.card-name::placeholder, .card-number::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    padding-left: 10px;
+}
+.month{
+    margin-left: 28px;
+}
+.exp{
+    align-self: flex-start;
+}
+.exp>.month,.year{
+    width: 70px;
+    height: 44px;
+    /* margin-bottom: 20px; */
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+    margin-bottom: 0;
+    font-size: 20px;
+    text-align: center;
+}
+.exp>.month::placeholder,.year::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    text-align: center;
+}
+.exp>.cvc{
+    /* margin-top: 10px; */
+    height: 44px;
+    width: 160px;
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.cvc::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.confirm{
+    margin-top: 10px;
+    margin-left: 28px;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    width: 320px;
+    background-color: hsl(278, 68%, 11%);
+    color: rgb(255, 250, 250);
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.confirmDis{
+    margin-top: 10px;
+    margin-left: 28px;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    width: 320px;
+    background-color: hsla(278, 68%, 11%, 0.514);
+    color: rgb(255, 250, 250);
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.confirm:active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+.confirm:hover{
+    cursor: pointer;
+    background-color: hsla(278, 68%, 11%, 0.979);
+}
+.err-food{
+    display: inline-block;
+    height: 10px;
+    width: 78px;
+    margin: 0;
+    font-size: 11px;
+    padding: 0;
+    text-align: start;
+    margin-left: 5px;
+    color: red;
+}
+.error{
+    margin: 0;
+    height: 25px;
+    font-size: 11px;
+    margin-left: 28px;
+    color: red;
+}
+.rpadre{
+    margin: 0;
+    padding: 0;
+    margin-left: 28px;
+}
+.svg{
+    width: 80px;
+    height: 80px;
+}
+.confirm-card{
+    width: 100%;
+    height: 470px;
+    display: flex;
+    margin-left: 50px;
+    transform: translateY(100px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.continue{
+    margin-top: 40px;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    width: 320px;
+    background-color: hsl(278, 68%, 11%);
+    color: rgb(255, 250, 250);
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.continue:active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+.continue:hover{
+    cursor: pointer;
+    background-color: hsla(278, 68%, 11%, 0.979);
+}
+.gray{
+    color: rgba(80, 77, 77, 0.623);
+}
+
+
+@media screen and (max-width: 720px) {
+    
+.grid-container{
+        display: grid;
+        grid-template-columns: minmax(375px,540px);
+        grid-template-rows: 320px 1fr;
+        justify-content: center;
+        grid-template-areas:"cards"
+                            "form";
+    }
+.dinamic-card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    grid-area: cards;
+}
+input[type="number"], input[type="text"]{
+    outline: none;
+ }
+
+input[type="number"]:active, input[type="text"]:active{
+border-color: hsl(278, 94%, 30%);
+}
+
+.cards{
+    width: 100%;
+    height: 240px;
+    background-image: url(images/bg-main-mobile.png);
+    background-size: cover;
+    background-position: 50%;
+}
+
+.back-card{
+    position: relative;
+    width: 285px;
+    height: 155px;
+    background-image: url(images/bg-card-back.png);
+    background-size: cover;
+    background-position: 50%;
+    margin-left: 70px;
+    margin-top: 30px;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+}
+
+.front-card{
+    position: absolute;
+    width: 295px;
+    height: 155px;
+    background-image: url(images/bg-card-front.png);
+    background-size: cover;
+    background-position: 50%;
+    margin-top: 65px;
+    margin-left: -60px;
+    border-radius: 10px;
+    
+}
+.cardlogo{
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left !important;
+}
+.back-card>p{
+    transform: translateY(69px);
+    text-align: right;
+    margin-right: 40px;
+    font-size: 10px;
+    font-weight:lighter;
+    letter-spacing: 2px;
+}
+
+.p1-front{
+    margin-top: 25px;
+    text-align: center;
+    letter-spacing:2px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.p-food-card{
+    width: 241px;
+    height: 10px;
+    margin-left: 30px;
+    transform: translateY(1px);
+    display: flex;
+    font-size: 10px;
+    /* justify-content: space-between; */
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.p-month{
+    width: 25PX;
+    margin-left: 60px;
+    text-align: right;
+}
+.P-year{
+    width: 25px;
+    text-align: right;
+}
+.p2-front{
+    width: 150px;
+    /* height: 20px; */
+}
+.form{
+    grid-area: form;
+    width: 100%;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    transform: translateY(0);
+}
+
+label{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: 2px;
+    margin-left: 25px;
+    margin-bottom: 10px;
+}
+
+.card-name, .card-number{
+    height: 44px;
+    width: 320px;
+    margin-left: 28px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+}
+
+.card-name::placeholder, .card-number::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    padding-left: 10px;
+}
+.month{
+    margin-left: 28px;
+}
+.exp>.month,.year{
+    width: 70px;
+    height: 44px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+}
+.exp>.month::placeholder,.year::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    text-align: center;
+}
+.exp>.cvc{
+    margin-top: 10px;
+    height: 44px;
+    width: 160px;
+    border: 1px solid rgb(235, 222, 222);
+    border-radius: 10px;
+    text-align: left;
+}
+.cvc::placeholder{
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: rgba(2, 2, 2, 0.212);
+    font-weight: 600;
+    padding-left: 8px;
+}
+
+.confirm{
+    margin-left: 28px;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    width: 320px;
+    margin-bottom: 50px;
+    background-color: hsl(278, 68%, 11%);
+    color: rgb(255, 250, 250);
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.confirm:active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+.confirm:hover{
+    cursor: pointer;
+    background-color: hsla(278, 68%, 11%, 0.979);
+}
+.svg{
+    width: 80px;
+    height: 80px;
+}
+.confirm-card{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transform:translateY(0px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    transform:0;
+    grid-area: form;
+}
+.continue{
+    margin-top: 40px;
+    border: none;
+    border-radius: 10px;
+    height: 44px;
+    width: 320px;
+    background-color: hsl(278, 68%, 11%);
+    color: rgb(255, 250, 250);
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.continue:active{
+    border: 1px solid hsl(278, 94%, 30%);
+}
+.continue:hover{
+    cursor: pointer;
+    background-color: hsla(278, 68%, 11%, 0.979);
+}
+.gray{
+    color: rgba(80, 77, 77, 0.623);
+}
+.error{
+    margin: 0;
+    height: 25px;
+    font-size: 11px;
+    margin-left: 28px;
+    color: red;
+}
+}
